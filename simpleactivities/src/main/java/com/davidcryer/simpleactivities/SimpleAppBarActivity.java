@@ -44,12 +44,28 @@ public abstract class SimpleAppBarActivity extends SimpleFragmentManagerUtilsAct
         return fragment(getContentFragmentViewContainer());
     }
 
-    protected void add(String tag, FragmentProvider fragmentProvider) {
-        add(getContentFragmentViewContainer(), tag, fragmentProvider);
+    protected void add(final String tag, final FragmentProvider fragmentProvider) {
+        super.add(getContentFragmentViewContainer(), tag, fragmentProvider, noAnims());
     }
 
-    protected void replace(String tag, FragmentProvider fragmentProvider) {
-        replace(getContentFragmentViewContainer(), tag, fragmentProvider);
+    protected void add(final String tag, final FragmentProvider fragmentProvider, final FragmentAnimations initialAnims) {
+        super.add(getContentFragmentViewContainer(), tag, fragmentProvider, initialAnims, noAnims());
+    }
+
+    protected void add(final String tag, final FragmentProvider fragmentProvider, final FragmentAnimations initialAnims, final FragmentAnimations popAnims) {
+        super.add(getContentFragmentViewContainer(), tag, fragmentProvider, initialAnims, popAnims);
+    }
+
+    protected void replace(final String tag, final FragmentProvider fragmentProvider) {
+        super.replace(getContentFragmentViewContainer(), tag, fragmentProvider);
+    }
+
+    protected void replace(final String tag, final FragmentProvider fragmentProvider, final FragmentAnimations initialAnims) {
+        super.replace(getContentFragmentViewContainer(), tag, fragmentProvider, initialAnims);
+    }
+
+    protected void replace(final String tag, final FragmentProvider fragmentProvider, final FragmentAnimations initialAnims, final FragmentAnimations popAnims) {
+        super.replace(getContentFragmentViewContainer(), tag, fragmentProvider, initialAnims, popAnims);
     }
 
     @IdRes
