@@ -55,15 +55,15 @@ abstract class SimpleFragmentManagerUtilsActivity extends AppCompatActivity {
 
     private void addFragment(@IdRes final int view, final Fragment fragment, final String tag, final FragmentAnimations initialAnims, final FragmentAnimations popAnims) {
         addOrReplaceFragment(transaction -> {
-            transaction.add(view, fragment, tag);
             transaction.setCustomAnimations(initialAnims.entry, initialAnims.exit, popAnims.entry, popAnims.exit);
+            transaction.add(view, fragment, tag);
         });
     }
 
     private void replaceFragment(@IdRes final int view, final Fragment fragment, final String tag, final FragmentAnimations initialAnims, final FragmentAnimations popAnims) {
         addOrReplaceFragment(transaction -> {
-            transaction.replace(view, fragment, tag);
             transaction.setCustomAnimations(initialAnims.entry, initialAnims.exit, popAnims.entry, popAnims.exit);
+            transaction.replace(view, fragment, tag);
         });
     }
 
