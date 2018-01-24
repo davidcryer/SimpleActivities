@@ -23,7 +23,7 @@ public class SampleActivity extends SimpleAppBarActivity {
     }
 
     void replaceSampleFragment() {
-        add(null, this::sampleFragment, anims(R.anim.enter_right, R.anim.exit_left), anims(R.anim.enter_left, R.anim.exit_right));
+        replace(null, this::sampleFragment, anims(R.anim.enter_right, R.anim.exit_left), anims(R.anim.enter_left, R.anim.exit_right));
     }
 
     SampleFragment sampleFragment() {
