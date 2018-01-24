@@ -1,1 +1,1 @@
-include ':simpleactivities'
+include ':simpleactivities', ':sample'
