@@ -9,19 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 
 abstract class SimpleFragmentManagerUtilsActivity extends AppCompatActivity {
 
-    boolean hasFragment(@IdRes final int view) {
+    protected boolean hasFragment(@IdRes final int view) {
         return fragment(view) != null;
     }
 
-    Fragment fragment(final int view) {
+    protected Fragment fragment(final int view) {
         return getSupportFragmentManager().findFragmentById(view);
     }
 
-    boolean hasFragment(final String tag) {
+    protected boolean hasFragment(final String tag) {
         return fragment(tag) != null;
     }
 
-    Fragment fragment(final String tag) {
+    protected Fragment fragment(final String tag) {
         return getSupportFragmentManager().findFragmentByTag(tag);
     }
 
@@ -73,11 +73,11 @@ abstract class SimpleFragmentManagerUtilsActivity extends AppCompatActivity {
         transaction.addToBackStack(null).commit();
     }
 
-    void popBackStack() {
+    protected void popBackStack() {
         getSupportFragmentManager().popBackStack();
     }
 
-    boolean hasMoreThanOneFragmentOnBackStack() {
+    protected boolean hasMoreThanOneFragmentOnBackStack() {
         return getSupportFragmentManager().getBackStackEntryCount() > 1;
     }
 
@@ -85,7 +85,7 @@ abstract class SimpleFragmentManagerUtilsActivity extends AppCompatActivity {
         return new FragmentAnimations(entry, exit);
     }
 
-    FragmentAnimations noAnims() {
+    protected FragmentAnimations noAnims() {
         return new FragmentAnimations(0, 0);
     }
 
